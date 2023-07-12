@@ -82,10 +82,10 @@ type ShareConfiguration struct {
 
 // generateSharableKey generates a random key and returns the public key and private key in
 // big-endian encoding. It returns an error if it cannot acquire sufficient randomness.
-func generateSharableKey() (PublicKey, []byte, error) {
+func generateSharableKey() (PublicKey, []byte, PrivateKey, error) {
 	pub, priv, err := GenerateKey(nil)
 	if err != nil {
-		return nil, nil, err
+		return nil, nil, nil, err
 	}
 
 	// Internally the PrivateKey type is represented as the seed || public key, but we want to pull
@@ -113,23 +113,23 @@ func generateSharableKey() (PublicKey, []byte, error) {
 	field := &curves.Field{Int: curves.Ed25519Order()}
 	expandedSeedReduced := field.ReducedElementFromBytes(expandedSeed)
 
-	return pub, expandedSeedReduced.Bytes(), nil
+	return pub, expandedSeedReduced.Bytes(), priv, nil
 }
 
 // GenerateSharedKey generates a random key, splits it, and returns the public key, shares, and VSS commitments.
-func GenerateSharedKey(config *ShareConfiguration) (PublicKey, []*KeyShare, Commitments, error) {
-	pub, priv, err := generateSharableKey()
+func GenerateSharedKey(config *ShareConfiguration) (PublicKey, []*KeyShare, Commitments, PrivateKey, error) {
+	pub, priv, oriPriv, err := generateSharableKey()
 	//pub, priv, err := ed25519.GenerateKey(nil)
 	if err != nil {
-		return nil, nil, nil, err
+		return nil, nil, nil, nil, err
 	}
 
 	keyShares, commitments, err := splitPrivateKey(config, priv)
 	if err != nil {
-		return nil, nil, nil, err
+		return nil, nil, nil, nil, err
 	}
 
-	return pub, keyShares, commitments, nil
+	return pub, keyShares, commitments, oriPriv, nil
 }
 
 // splitPrivateKey splits the secret into a set of secret shares and creates a set of commitments of them.
