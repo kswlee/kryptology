@@ -7,7 +7,7 @@
 package v1
 
 import (
-	"github.com/coinbase/kryptology/pkg/core/curves"
+	"github.com/kswlee/kryptology/pkg/core/curves"
 )
 
 type polynomial struct {

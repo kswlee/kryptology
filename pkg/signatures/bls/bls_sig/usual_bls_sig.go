@@ -9,9 +9,9 @@ package bls_sig
 import (
 	"fmt"
 
-	"github.com/coinbase/kryptology/internal"
-	"github.com/coinbase/kryptology/pkg/core/curves/native"
-	"github.com/coinbase/kryptology/pkg/core/curves/native/bls12381"
+	"github.com/kswlee/kryptology/internal"
+	"github.com/kswlee/kryptology/pkg/core/curves/native"
+	"github.com/kswlee/kryptology/pkg/core/curves/native/bls12381"
 )
 
 // Implement BLS signatures on the BLS12-381 curve

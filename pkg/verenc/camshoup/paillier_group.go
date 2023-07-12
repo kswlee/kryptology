@@ -14,11 +14,9 @@ package camshoup
 import (
 	"math/big"
 
-	"git.sr.ht/~sircmpwn/go-bare"
-
-	"github.com/coinbase/kryptology/internal"
-	crypto "github.com/coinbase/kryptology/pkg/core"
-	"github.com/coinbase/kryptology/pkg/paillier"
+	"github.com/kswlee/kryptology/internal"
+	crypto "github.com/kswlee/kryptology/pkg/core"
+	"github.com/kswlee/kryptology/pkg/paillier"
 )
 
 // PaillierGroup holds public values for Verifiable Encryption

@@ -14,11 +14,11 @@ import (
 	"github.com/btcsuite/btcd/btcec"
 	"github.com/stretchr/testify/require"
 
-	tt "github.com/coinbase/kryptology/internal"
-	crypto "github.com/coinbase/kryptology/pkg/core"
-	"github.com/coinbase/kryptology/pkg/core/curves"
-	paillier "github.com/coinbase/kryptology/pkg/paillier"
-	"github.com/coinbase/kryptology/pkg/tecdsa/gg20/dealer"
+	tt "github.com/kswlee/kryptology/internal"
+	crypto "github.com/kswlee/kryptology/pkg/core"
+	"github.com/kswlee/kryptology/pkg/core/curves"
+	paillier "github.com/kswlee/kryptology/pkg/paillier"
+	"github.com/kswlee/kryptology/pkg/tecdsa/gg20/dealer"
 )
 
 func TestRange1Proof(t *testing.T) {

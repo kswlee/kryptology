@@ -537,7 +537,7 @@ linters-settings:
 #   wrapcheck:
 #     ignorePackageGlobs:
 #       - google.golang.org/grpc/status
-#       - github.com/coinbase/tex/internal/coordinator/common
+#       - github.com/kswlee/tex/internal/coordinator/common
 
 issues:
   # Excluding configuration per-path, per-linter, per-text and per-source

@@ -12,8 +12,8 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/coinbase/kryptology/pkg/core/curves"
-	"github.com/coinbase/kryptology/pkg/ot/extension/kos"
+	"github.com/kswlee/kryptology/pkg/core/curves"
+	"github.com/kswlee/kryptology/pkg/ot/extension/kos"
 )
 
 func TestDkg(t *testing.T) {

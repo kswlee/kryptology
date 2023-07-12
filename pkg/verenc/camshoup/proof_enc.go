@@ -10,10 +10,8 @@ import (
 	"fmt"
 	"math/big"
 
-	"git.sr.ht/~sircmpwn/go-bare"
-
-	"github.com/coinbase/kryptology/internal"
-	mod "github.com/coinbase/kryptology/pkg/core"
+	"github.com/kswlee/kryptology/internal"
+	mod "github.com/kswlee/kryptology/pkg/core"
 )
 
 // ProofVerEnc is a proof of verifiable encryption for a discrete log

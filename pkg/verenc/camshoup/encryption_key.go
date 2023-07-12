@@ -10,9 +10,7 @@ import (
 	"fmt"
 	"math/big"
 
-	"git.sr.ht/~sircmpwn/go-bare"
-
-	mod "github.com/coinbase/kryptology/pkg/core"
+	mod "github.com/kswlee/kryptology/pkg/core"
 )
 
 type encryptionKeyMarshal struct {
